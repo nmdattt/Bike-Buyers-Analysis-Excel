@@ -1,67 +1,120 @@
-# Bike Buyers Analysis with Excel
+# Bike Buyers Analysis – Excel Project
 
-## Introduction
+## Overview
+This project analyzes customer purchasing behavior using Excel-based data cleaning, transformation, PivotTables, and dashboard design.
 
-This project demonstrates data cleaning, exploratory data analysis (EDA), and dashboard creation in Microsoft Excel.
-The dataset contains information about customers and their purchasing behavior regarding bicycles.
+The goal is to identify which demographic groups are most likely to purchase a bicycle and highlight key factors such as income, age, commute distance, education, and region.
+The final result is an interactive Excel dashboard that enables stakeholders to explore insights through slicers and dynamic charts.
 
-The project covers:
-- Cleaning and preparing raw data
-- Summarizing insights with pivot tables
-- Building an interactive dashboard to visualize trends
+## Dataset
+The dataset includes 1,000 customer records with attributes:
 
-## Project Structure
+* Gender
+* Marital Status
+* Income
+* Education
+* Occupation
+* Home Ownership
+* Number of Cars
+* Commute Distance
+* Region
+* Age & Age Bracket
+* Purchased Bike (Yes/No)
 
-```
-.
-├── Excel_Project_Dataset.xlsx
-├── Cleaning_Data_Guide.md 
-└── README.md
-```
+## Data Cleaning & Preparation (Working\_sheet)
+Data cleaning was performed directly inside Excel, including:
 
-- **Excel_Project_Dataset.xlsx**: Contains raw data, working sheet, pivot tables, and dashboard.
-- **Cleaning_Data_Guide.md**: guides how to clean the raw data.
-- **README.md**: This file.
+### Column normalization
+* Standardized column names
+* Fixed inconsistent category labels (e.g., gender, region, education levels)
 
-## Included Sheets
+### Handling missing & invalid values
+* Checked blanks
+* Replaced invalid entries
+* Validated numeric formatting for income & age
 
-- **bike_buyers**: Raw dataset including customer demographics, income, and purchase behavior.
-- **Working_sheet**: Data preparation sheet with cleaning, transformations, and additional calculations.
-- **Pivot_Table**: Pivot tables summarizing data by categories such as gender, income level, marital status, and purchase decision.
-- **Dashboard**: Interactive visuals and charts providing high-level insights into customer patterns and bicycle purchase
+### Feature engineering
+* Created additional fields such as:
+    * Age Bracket (Adolescent, Middle Age, Old)
+    * Cleaned commute distance categories
+    * Cleaned income formatting (converted text → number)
 
-## Usage Instructions
+### Data restructuring
+* Sorted and grouped demographic attributes
+* Prepared the dataset for PivotTable analysis
 
-1. **Download the file**
-    - Clone this repository or download `Excel_Project_Dataset.xlsx`.
+## Pivot Table Analysis
+Several PivotTables were created to summarize key patterns:
 
-2. **Open in Excel**
-    - Recommended: Microsoft Excel 2016 or higher for best compatibility.
+### 1. Average Income Per Purchase
+* Compared average income between customers who purchased and did not purchase a bike
+* Breakdown by Gender
 
-3. **Explore the workbook**
-    - View the **bike_buyers** sheet for the original dataset.
-    - Check the **Working_sheet** to see intermediate steps and cleaning.
-    - Use **Pivot_Table** to interact with summarized data.
-    - Open **Dashboard** for charts and insights.
+**Insight:**
+Male customers have higher income on average and a higher likelihood of purchasing a bike.
 
-4. **Extend the analysis**
-    - Add new pivot tables or charts.
-    - Modify the dashboard to focus on different customer attributes.
+### 2. Customer Commute Distance vs Purchase
+* Count of purchases by commute distance
+* Overlayed line charts for Yes/No purchase decisions
 
-## Results & Insights
-- Provides an overview of which customer groups are more likely to buy bicycles.
-- Highlights relationships between income, marital status, and purchase decisions.
-- Offers a dashboard for stakeholders to interactively explore key findings.
+**Insight:**
+Customers in 0–1 miles and 1–2 miles commute range show higher purchase frequency.
+Purchase likelihood decreases as commute distance increases.
 
-## System Requirements
+### 3. Customer Age Bracket
+* Pivot analysis by:
+    * Adolescent
+    * Middle Age
+    * Old
 
-- Microsoft Excel 2016 or higher (recommended).
-- At least 4GB RAM for smooth handling of data and charts.
+**Insight:**
+Middle-aged customers are most likely to purchase a bike.
 
-## Author
+## Final Dashboard (Interactive)
+The dashboard includes:
 
-- [nmdattt](https://github.com/nmdattt)
+* **Slicers** for Marital Status, Region, Education, Gender, Age Bracket
+* **Interactive charts:**
+    * Average Income Per Purchase
+    * Customer Age Bracket Purchase Patterns
+    * Commute Distance vs Purchase Decision
 
----
+**This allows users to explore:**
+* Which demographic segments are most profitable
+* How income and distance impact purchase decisions
+* Which groups to target for marketing campaigns
 
-**Feel free to contribute or open issues for suggestions and improvements.**
+## Key Insights
+From the analysis:
+
+* Income is positively associated with bike purchasing likelihood
+* Middle-aged customers are the strongest buyer segment
+* Short-distance commuters (0–2 miles) buy more frequently
+* Region and education level influence purchase probability
+* Women buy slightly fewer bikes but trends vary across income brackets
+
+These insights can guide targeted marketing, demographic-based promotions, and product positioning.
+
+## Tools & Techniques Used
+* Microsoft Excel
+* Data Cleaning (Find & Replace, text-to-columns, data validation)
+* PivotTables & PivotCharts
+* Slicers & interactive filters
+* Dashboard layout design
+* Feature engineering (age bracket, commute distance grouping, income formatting)
+
+`Excel_Project_Dataset.xlsx` includes:
+* `bike_buyers` — raw dataset
+* `Working_sheet` — cleaned dataset with engineered features
+* `Pivot_Table` — all PivotTables and summary analysis
+* `Dashboard` — final interactive dashboard
+
+## How to Use
+1.  Download the repository
+2.  Open `Excel_Project_Dataset.xlsx`
+3.  Navigate across tabs:
+    * Raw data
+    * Cleaned working sheet
+    * PivotTable analysis
+    * Final dashboard
+4.  Use slicers on the dashboard to explore insights
