@@ -50,6 +50,7 @@ A new column called `Age Brackets` is added to segment customers into meaningful
 Formula (assuming Age is in column L):
 ```excel
 =IF(L2>54,"Old",IF(L2>=31,"Middle Age",IF(L2<31,"Adolescent","Invalid")))
+```
 
 Resulting groups:
 * **Old:** Age > 54
